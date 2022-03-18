@@ -1,0 +1,12 @@
+body {
+  background-color: #f3fdfd;
+}
+.page-nav-bar {
+  background-color: #21A4FE !important;
+}
+.page-nav-bar .van-nav-bar__title {
+  color: white;
+}
+.btn {
+  background-color: #21A4FE !important;
+}

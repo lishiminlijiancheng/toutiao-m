@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3170713 */
+  src: url('./iconfont.woff2') format('woff2'),
+       url('./iconfont.woff') format('woff'),
+       url('./iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e664";
+}
+
+.icon-add-circle:before {
+  content: "\e665";
+}
+
+.icon-arrow-down:before {
+  content: "\e666";
+}
+
+.icon-ashbin:before {
+  content: "\e667";
+}
+
+.icon-arrow-right:before {
+  content: "\e668";
+}
+
+.icon-browse:before {
+  content: "\e669";
+}
+
+.icon-arrow-left-circle:before {
+  content: "\e66a";
+}
+
+.icon-close:before {
+  content: "\e66b";
+}
+
+.icon-copy:before {
+  content: "\e66c";
+}
+
+.icon-direction-right:before {
+  content: "\e66d";
+}
+
+.icon-direction-left:before {
+  content: "\e66e";
+}
+
+.icon-edit:before {
+  content: "\e66f";
+}
+
+.icon-eye-close:before {
+  content: "\e670";
+}
+
+.icon-error:before {
+  content: "\e671";
+}
+
+.icon-favorite:before {
+  content: "\e672";
+}
+
+.icon-file-add:before {
+  content: "\e673";
+}
+
+.icon-fabulous:before {
+  content: "\e674";
+}
+
+.icon-folder-close:before {
+  content: "\e675";
+}
+
+.icon-good:before {
+  content: "\e676";
+}
+
+.icon-home:before {
+  content: "\e677";
+}
+
+.icon-file-open:before {
+  content: "\e678";
+}
+
+.icon-layers:before {
+  content: "\e679";
+}
+
+.icon-map:before {
+  content: "\e67a";
+}
+
+.icon-menu:before {
+  content: "\e67b";
+}
+
+.icon-loading:before {
+  content: "\e67c";
+}
+
+.icon-help:before {
+  content: "\e67d";
+}
+
+.icon-modular:before {
+  content: "\e67e";
+}
+
+.icon-search:before {
+  content: "\e67f";
+}
+
+.icon-select:before {
+  content: "\e680";
+}
+
+.icon-success:before {
+  content: "\e681";
+}
+
+.icon-smile:before {
+  content: "\e682";
+}
+
+.icon-setting:before {
+  content: "\e683";
+}
+
+.icon-survey:before {
+  content: "\e684";
+}
+
+.icon-text:before {
+  content: "\e685";
+}
+
+.icon-user:before {
+  content: "\e686";
+}
+
+.icon-arrow-down-bold:before {
+  content: "\e687";
+}
+
+.icon-arrow-right-bold:before {
+  content: "\e688";
+}
+
+.icon-select-bold:before {
+  content: "\e689";
+}
+
+.icon-user-filling:before {
+  content: "\e68b";
+}
+
+.icon-setting-filling:before {
+  content: "\e68c";
+}
+
+.icon-success-filling:before {
+  content: "\e68d";
+}
+
+.icon-map-filling:before {
+  content: "\e68e";
+}
+
