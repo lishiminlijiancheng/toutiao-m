@@ -7,8 +7,9 @@ import './styles/fonts/iconfont.css'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import 'amfe-flexible';
-
+import './mock/index'
 Vue.use(Vant);
+
 Vue.config.productionTip = false
 new Vue({
   router,

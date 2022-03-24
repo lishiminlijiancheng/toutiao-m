@@ -1,6 +1,10 @@
 <template>
   <div>
-      <van-nav-bar class="page-nav-bar" title="登录" />
+  <van-nav-bar  class="page-nav-bar" title="登录" >
+  <template #left>
+    <van-icon @click="back" class="icon-text" name="arrow-left" size="18" />
+  </template>
+      </van-nav-bar>
     <van-form ref="loginForm" @submit="onLogin">
   <van-cell-group inset>
     <van-field
@@ -83,15 +87,19 @@ methods:{
          message:'加载中...',
          forbidClick:true
        })
-       try {const res=await login({...this.user})
-       if(res.data.status==0){
-        this.$toast.success("登录成功！")
-        this.$store.commit('setUser',data)}
+       const reqData={mobile:this.user.mobile,code:this.user.code}
+       try {const res=await login(reqData)
+       if(res.data.status==200){
+          this.$toast.success("登录成功！")
+        this.$router.back()
+         this.$store.commit('setUser',res.data.results)
+      
+        }
       else
         this.$toast.fail("登录失败！")
        }
        catch(err){
-        
+        console.log(err)
        }
     },
    async sendMessage(){
@@ -101,6 +109,9 @@ methods:{
           return console.log("发送验证码失败！",err);
         }
         this.countVisible=true;
+    },
+    back(){
+      this.$router.back();
     }
     
 }

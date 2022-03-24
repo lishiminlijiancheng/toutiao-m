@@ -5,8 +5,11 @@ body {
   background-color: #21A4FE !important;
 }
 .page-nav-bar .van-nav-bar__title {
-  color: white;
+  color: white !important;
 }
 .btn {
   background-color: #21A4FE !important;
+}
+.van-nav-bar .van-icon {
+  color: white !important;
 }
