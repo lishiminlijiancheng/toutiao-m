@@ -1,10 +1,49 @@
 import Mock from "mockjs";
+var getQuery = (url, name) => {
+    console.log(url, name);
+    const index = url.indexOf("?");
+    if (index !== -1) {
+      const queryStrArr = url.substr(index + 1).split("&");
+      for (var i = 0; i < queryStrArr.length; i++) {
+        const itemArr = queryStrArr[i].split("=");
+        console.log(itemArr);
+        if (itemArr[0] === name) {
+          return itemArr[1];
+        }
+      }
+    }
+    return null;
+  };
 const info=Mock.mock({
     'toutiao|1-99':1,
     'guanzhu|1-99':1,
     'fensi|1-99':1,
     "huozan|1-99":1
 })
+const {channels}=Mock.mock({
+    'channels|5-10':[
+        {
+            id:"@increment()",
+            name:"@ctitle(2)"
+        }
+    ]
+})
+const {articles}=Mock.mock({
+    'articles|20-32':[
+        {
+            id:"@increment()",
+            title:"@ctitle(50)",
+            content:"@csentence(30)",
+            aut_name:"@cname",
+            'comn_count|10-99':1,
+            date:'@date(yyyy-MM-dd hh:mm:ss)',
+            'pic|0-4':['@image("8*8","#ff0000","#fff","png","坤坤")']
+    
+        }
+    ]
+})
+console.log(articles)
+console.log(channels)
 console.log(info)
 const sum=1
 const school='尚硅谷'
@@ -36,4 +75,25 @@ Mock.mock("http://127.0.0.1:3000/app/v1_0/user",'get',(option)=>{
          ...info
         }
     }
+})
+Mock.mock("http://127.0.0.1:3000/app/channels",'get',(option)=>{
+        return {
+            status:200,
+            data:channels
+        }
+})
+Mock.mock(/http:\/\/127.0.0.1:3000\/app\/articles/,'get',(option)=>{
+   //let channel_id=getQuery(option.url,"channel_id");
+   let timestamp=getQuery(option.url,"timestamp");
+   console.log(timestamp)
+   return {
+       msg:"ok",
+       data:{
+           pretimestamp:Date.now(),
+           results:articles,
+           page:1,
+       }
+   }
+  
+
 })
