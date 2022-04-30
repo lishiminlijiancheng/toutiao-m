@@ -28,6 +28,14 @@ const {channels}=Mock.mock({
         }
     ]
 })
+const {recomChannels}=Mock.mock({
+    'recomChannels|20-30':[
+        {
+            id:"@increment()",
+            name:"@ctitle(2)"
+        }
+    ]
+})
 const {articles}=Mock.mock({
     'articles|20-32':[
         {
@@ -96,4 +104,11 @@ Mock.mock(/http:\/\/127.0.0.1:3000\/app\/articles/,'get',(option)=>{
    }
   
 
+})
+Mock.mock('http://127.0.0.1:3000/getRecomChannels','get',(option)=>{
+
+    return {
+        msg:'ok',
+        results:recomChannels
+    }
 })

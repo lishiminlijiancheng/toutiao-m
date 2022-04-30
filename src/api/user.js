@@ -11,9 +11,9 @@ export const getUserInfo=()=>{
     url:'app/v1_0/user',
   })
 }
-export const getChannels=()=>{
-  return request({
-    method:'get',
-    url:'app/channels'
-  })
-}
+// export const getChannels=()=>{
+//   return request({
+//     method:'get',
+//     url:'app/channels'
+//   })
+// }
