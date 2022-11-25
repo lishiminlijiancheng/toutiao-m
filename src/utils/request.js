@@ -1,7 +1,15 @@
 import axios from "axios";
 import store from "../store/index";
+import jsonBig from 'json-bigint';
 const request=axios.create({
     baseURL:'http://127.0.0.1:3000/',
+    transformResponse: [function(data){
+        try{
+            return jsonBig.parse(data)
+        }catch(err){
+            return {data}
+        }
+    }]
 })
 //请求拦截器
 request.interceptors.request.use(function(config){

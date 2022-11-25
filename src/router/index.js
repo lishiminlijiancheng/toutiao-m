@@ -11,6 +11,18 @@ const routes = [
       name:'login',
       component:()=>import('@/views/login/index.vue')
    },
+   {
+      path:'/search',
+      component:()=>import('@/views/search/index.vue')
+
+   },
+   {
+      name: 'article',
+      path:'/article/:articleId',
+      component:()=>import('@/views/article/index.vue'),
+      props: true,//开启props传参，把路由参数映射到组件的props中
+
+   },
   
    {
       path:'/',

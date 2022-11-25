@@ -112,3 +112,75 @@ Mock.mock('http://127.0.0.1:3000/getRecomChannels','get',(option)=>{
         results:recomChannels
     }
 })
+Mock.mock(/http:\/\/127.0.0.1:3000\/app\/v1_0\/suggestion/,'get',(option)=>{
+    let p=getQuery(option.url,'p')
+    console.log('----------------------------------')
+    console.log(p)
+    return {
+        msg:'ok',
+        options:[
+            p+'.h',
+            p+'.less',
+            p+'.java',
+            p+'.react'
+        ]
+    }
+})
+
+
+var length=200
+Mock.mock(/http:\/\/127.0.0.1:3000\/app\/v1_0\/lists/,'get',(option)=>{
+    const {lists} = Mock.mock({
+        "lists|20":[
+            {id:'@increment()',
+             name:'@csentence(10,20)'}
+        ]
+    })
+    length-=10;
+    if(length<=0){
+        return {msg:'ok',
+                data:[]}
+    }
+    else
+    return {
+        msg:'ok',
+        data:lists
+    }
+})
+Mock.mock('http://127.0.0.1:3000/history','get',()=>{
+    const {histories}=Mock.mock({
+        "histories|5-10":[
+            {id:'@increment()',
+            name:'@csentence(4,8)'}
+        ]
+    })
+    return {
+        msg:'ok',
+        data:histories
+    }
+})
+Mock.mock(/http:\/\/127.0.0.1:3000\/app\/v1_0\/article/,'get',()=>{
+    const {article} = Mock.mock({
+        "article":{
+            title: '@ctitle(5,10)',
+            pubdate: '@date(yyyy-MM-dd hh:mm:ss)',
+            content:'<p>前端攻城狮，精通vue,react,node.js.十多年大厂前端开发经验...</p>'+
+                    '<img style="width:100%;height:300px" src="https://img01.yzcdn.cn/vant/apple-1.jpg"/>'+
+                    '<p>有uniapp移动端开发经验，网站性能提升...</p>'+
+                    '<img style="width:100%;height:300px" src="https://img01.yzcdn.cn/vant/apple-2.jpg"/>',
+            aut_id:1,
+            ch_id:8,
+            aut_name:"我的腿不短",
+            aut_photo:'@image("8*8","#ff0000","#fff","png","坤坤")',
+            is_followed:false,
+            attitude:-1,
+            is_collected:false,
+            recomments:[]
+        }
+    })
+    return {
+        code:200,
+        msg:'success',
+        data:article
+    }
+})
