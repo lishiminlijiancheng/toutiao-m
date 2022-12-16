@@ -61,7 +61,7 @@ Mock.mock("http://127.0.0.1:3000/app/v1_0/authorizations",'post',(option)=>{
     const datas=JSON.parse(option.body);
     console.log(datas)
     let mobile=datas.mobile
-    let code=datas.code
+    let code=datas.password
     if(mobile=='15638329257'&&code=='123456')
     return {
         status:200,
