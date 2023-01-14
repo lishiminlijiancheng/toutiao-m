@@ -12,6 +12,10 @@ import './utils/dayjs'
 Vue.use(Vant);
 
 Vue.config.productionTip = false
+window._AMapSecurityConfig = {
+  serviceHost:'http://43.143.225.200:80/_AMapService',  
+  // 例如 ：serviceHost:'http://1.1.1.1:80/_AMapService',
+}
 new Vue({
   router,
   store,

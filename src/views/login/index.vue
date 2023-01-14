@@ -89,6 +89,7 @@ methods:{
        })
        const reqData={mobile:this.user.mobile,code:this.user.code}
        try {const res=await login(reqData)
+       console.log(res)
        if(res.data.status==200){
           this.$toast.success("登录成功！")
         this.$router.back()

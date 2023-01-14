@@ -8,11 +8,13 @@
           <div class="loginHead">
                 <div class="person">
                     <div class="image">
+                        <input type="file" name="aveter" id="aveter" ref="aveter" hidden @change="fileChange"/>
                         <van-image
+                         @click="aveterChange"
                          width="100"
                          height="100"
                          round
-                         :src="require('../../assets/avatar.png')"
+                         :src="imgSrc"
                         />
                     </div>
                     <div class="text">黑马程序员</div>
@@ -50,6 +52,9 @@
              <van-cell title="消息通知" is-link />
             <van-cell title="小智同学" is-link class="mb-9" />
             <van-cell title="退出登录" class="logout-cell" clickable @click="logout" />
+           <van-popup closeable v-model="show" position="bottom" :style="{ height: '100%' }">
+                <ImageIndex v-if="show" @close="show=false" @finish="imgSrc=$event" :imgSrc="imgSrc"/>
+            </van-popup> 
         </div> 
       </div>
 </template>
@@ -57,11 +62,15 @@
 <script>
 import {mapState} from 'vuex'
 import {getUserInfo} from '@/api/user'
+import ImageIndex from '../../components/image'
 export default {
 name:'myIndex',
+components:{ImageIndex},
 data(){
     return{
-        userInfo:{}
+        userInfo:{},
+        imgSrc:require('../../assets/avatar.png'),
+        show:false
     }
 },
 computed:{
@@ -98,6 +107,18 @@ methods:{
             console.log(err)
         }
         
+    },
+    aveterChange(){
+        this.$refs.aveter.click();
+    },
+    fileChange(){
+        const file=this.$refs.aveter.files[0];
+        console.log(file)
+        this.imgSrc=window.URL.createObjectURL(file);
+         this.show=true;
+         console.log("------------------",this.$refs.aveter.value)
+         this.$refs.aveter.value="";
+
     }
 }
 }
