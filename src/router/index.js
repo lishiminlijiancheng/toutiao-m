@@ -5,65 +5,6 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-   // {
-   //    path:'/',
-   //    component: () => import('../views/login/index2.vue')
-   // },
-   // {
-   //    redirect:'/layout1/manage',
-   //    path:'/layout1',
-   //    component: () => import('../views/layout/index2.vue'),
-   //    children:[
-   //       {
-   //          path:'manage',
-   //          name:'manage1',
-   //          component: () => import('../views/manage/index1.vue')
-   //       },
-   //       {
-   //          path:'my',
-   //          name:'my',
-   //          component:()=>import('@/views/my/index1.vue')
-   //       }
-   //    ]
-   // },
-   // {
-   //    name:'layout2',
-   //    redirect:'/layout2/manage',
-   //    path:'/layout2',
-   //    component: () => import('../views/layout/index3.vue'),
-   //    children:[
-   //       {
-   //          path:'manage',
-   //          name:'manage2',
-   //          component: () => import('../views/manage/index2.vue')
-   //       },
-   //       {
-   //          path:'my',
-   //          name:'my',
-   //          component:()=>import('@/views/my/index1.vue')
-   //       }
-   //    ]
-   // },
-   // {
-   //    name:'layout3',
-   //    redirect:'/layout3/manage',
-   //    path:'/layout3',
-   //    component: () => import('../views/layout/index4.vue'),
-   //    children:[
-   //       {
-   //          path:'manage',
-   //          name:'manage3',
-   //          component: () => import('../views/manage/index3.vue')
-   //       },
-   //       {
-   //          path:'my',
-   //          name:'my',
-   //          component:()=>import('@/views/my/index1.vue')
-   //       }
-   //    ]
-   // },
-
-
    { 
       path:'/login',
       name:'login',
